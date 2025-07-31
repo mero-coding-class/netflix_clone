@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+.bg-image {
+    background-image: url('../images/background.jpg'); /* Placeholder image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.bg-overlay {
+    background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+/* Custom styles for the Netflix logo */
+.netflix-logo {
+    width: 100px; /* Adjust as needed */
+    height: auto;
+}
+@media (min-width: 768px) {
+    .netflix-logo {
+        width: 150px; /* Larger logo on desktop */
+    }
+}
+
+/* Carousel */
+.carousel-container {
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+}
+.carousel-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+.poster-card {
+    flex: 0 0 auto; /* Prevent shrinking */
+    width: 200px; /* Fixed width for posters */
+    height: 300px; /* Fixed height for posters */
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+.poster-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+.poster-card:hover img {
+    transform: scale(1.05);
+}
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+}
+.carousel-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Hide scrollbars inside drawer content */
+.drawer-scroll::-webkit-scrollbar {
+  display: none;
+}
+.drawer-scroll {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
